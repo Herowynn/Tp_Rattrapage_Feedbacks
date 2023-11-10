@@ -15,11 +15,36 @@ MonoBehaviour:
   GameObject: {fileID: 0}
   Name: 
   Feedbacks:
-  - rid: 3054296208083517445
+  - rid: 3054296208083517459
+  - rid: 3054296208083517460
+  - rid: 3054296208083517461
+  - rid: 3054296208083517462
+  - rid: 3054296208083517463
+  - rid: 3054296208083517464
   references:
     version: 2
     RefIds:
-    - rid: 3054296208083517445
+    - rid: 3054296208083517459
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 0}
+    - rid: 3054296208083517460
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0
+    - rid: 3054296208083517461
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0
+    - rid: 3054296208083517462
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 0}
+    - rid: 3054296208083517463
+      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        Prefab: {fileID: 0}
+    - rid: 3054296208083517464
       type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
       data:
         Prefab: {fileID: 0}

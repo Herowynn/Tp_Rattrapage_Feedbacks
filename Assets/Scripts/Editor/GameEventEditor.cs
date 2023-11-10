@@ -14,6 +14,8 @@ public class GameEventEditor : Editor
 	private SerializedProperty _feedbacks;
 	private System.Type[] _types;
 	private string[] _typeStr;
+	private int _dragStartID = -1;
+	private int _dragEndID = -1;
 
 	private void OnEnable()
 	{
@@ -51,7 +53,6 @@ public class GameEventEditor : Editor
 		serializedObject.Update();
 
 		GameEvent gameEvent = target as GameEvent;
-
 		string[] types = new string[] { "Add New Feedback", "Instantiate", "Wait" };
 
 		int newItem = EditorGUILayout.Popup(0, types) - 1;
@@ -65,9 +66,12 @@ public class GameEventEditor : Editor
 			gameEvent.Feedbacks.Add(newFeedback);
 			_feedbacksFoldout.Add(false);
 		}
+
 		for (int i = 0; i < _feedbacks.arraySize; i++)
 		{
+			int controlId = GUIUtility.GetControlID(FocusType.Passive);
 			SerializedProperty property = _feedbacks.GetArrayElementAtIndex(i);
+			Rect horizontal = EditorGUILayout.BeginHorizontal();
 
 			var backgroundRect = GUILayoutUtility.GetRect(5f, 17f);
 			var offset = 4f;
@@ -84,6 +88,34 @@ public class GameEventEditor : Editor
 
 			_feedbacksFoldout[i] = GUI.Toggle(foldoutRect, _feedbacksFoldout[i], gameEvent.Feedbacks[i].ToString(), EditorStyles.foldout);
 
+			int indexRemove = -1;
+
+			if(GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(EditorStyles.miniButton.CalcSize(new GUIContent("-")).x)))
+			{
+				indexRemove = i;
+			}
+
+			EditorGUILayout.EndHorizontal();
+
+			var eventCurrent = Event.current;
+
+			if(eventCurrent.type == EventType.MouseDown)
+			{
+				if(horizontal.Contains(eventCurrent.mousePosition))
+				{
+					GUIUtility.hotControl = controlId;
+					_dragStartID = i;
+					eventCurrent.Use();
+				}
+			}
+
+			if(_dragStartID == i)
+			{
+				Color color = new Color(0, 1, 0, 0.3f);
+				EditorGUI.DrawRect(horizontal, color);
+			}
+
+
 			if (_feedbacksFoldout[i])
 			{
 				foreach(var item in GetChildren(property))
@@ -92,6 +124,48 @@ public class GameEventEditor : Editor
 				}
 			}
 
+			if (horizontal.Contains(eventCurrent.mousePosition))
+			{
+				if(_dragStartID >= 0)
+				{
+					_dragEndID = i;
+
+					Rect headerSplit = horizontal;
+					headerSplit.height *= 0.5f;
+					headerSplit.y += headerSplit.height;
+
+					if (headerSplit.Contains(eventCurrent.mousePosition))
+						_dragEndID = i + 1;
+				}
+			}
+
+			if(_dragStartID >= 0 && _dragEndID >= 0)
+			{
+				if(_dragEndID != _dragStartID)
+				{
+					if (_dragEndID > _dragStartID)
+						_dragEndID--;
+
+					_feedbacks.MoveArrayElement(_dragStartID, _dragEndID);
+					_dragStartID = _dragEndID;
+				}
+			}
+
+			if(_dragStartID >= 0 || _dragEndID >= 0)
+			{
+				if (eventCurrent.type == EventType.MouseUp)
+				{
+					_dragStartID = -1;
+					_dragEndID = -1;
+					eventCurrent.Use();
+				}
+			}
+
+			if(indexRemove != -1)
+			{
+				_feedbacks.DeleteArrayElementAtIndex(indexRemove);
+				_feedbacksFoldout.RemoveAt(indexRemove);
+			}
 		}
 
 		serializedObject.ApplyModifiedProperties();
