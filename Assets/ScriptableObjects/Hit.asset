@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1d988410dcfe949a60f3c4dd9ccd09, type: 3}
+  m_Name: Hit
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 0}
+  Feedbacks:
+  - rid: 3054296252033269854
+  - rid: 3054296252033269855
+  - rid: 3054296252033269845
+  - rid: 3054296252033269850
+  - rid: 3054296252033269846
+  - rid: 3054296252033269851
+  - rid: 3054296252033269847
+  - rid: 3054296252033269852
+  - rid: 3054296252033269848
+  - rid: 3054296252033269853
+  - rid: 3054296252033269849
+  - rid: 3054296252033269856
+  - rid: 3054296252033269857
+  references:
+    version: 2
+    RefIds:
+    - rid: 3054296252033269845
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 025d1b50386dc8140a756c3a18ce6fe6, type: 3}
+    - rid: 3054296252033269846
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: d992ae3c7e41a8b41a5ad8c92a1ddaa5, type: 3}
+    - rid: 3054296252033269847
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 7a0f22c77bb6f044485b2693133b6643, type: 3}
+    - rid: 3054296252033269848
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: fec7f06961396b1499bc3f94f456f04b, type: 3}
+    - rid: 3054296252033269849
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 710df00f735abf544a94a28861b81ac4, type: 3}
+    - rid: 3054296252033269850
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.2
+    - rid: 3054296252033269851
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.2
+    - rid: 3054296252033269852
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.2
+    - rid: 3054296252033269853
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.2
+    - rid: 3054296252033269854
+      type: {class: PlayerStateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _newState: 2
+    - rid: 3054296252033269855
+      type: {class: AnimationRestartFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _restartAnimation: 0
+    - rid: 3054296252033269856
+      type: {class: PlayerStateFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _newState: 0
+    - rid: 3054296252033269857
+      type: {class: AnimationRestartFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _restartAnimation: 1

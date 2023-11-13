@@ -8,16 +8,14 @@ using UnityEngine;
 public class GameEvent : ScriptableObject
 {
 	public GameObject GameObject;
-	public string Name;
 
-	[SerializeReference] 
-	public List<GameFeedback> Feedbacks = new List<GameFeedback>();
+	[SerializeReference] public List<GameFeedback> Feedbacks = new List<GameFeedback>();
 
-	public IEnumerator Execute()
+	public IEnumerator Execute(GameObject gameObject)
 	{
 		foreach(var item in Feedbacks)
 		{
-			yield return item.Execute(this);
+			yield return item.Execute(this, gameObject);
 		}
 	}
 }

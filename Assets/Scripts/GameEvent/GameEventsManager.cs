@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameEventsManager : MonoBehaviour
@@ -21,13 +22,14 @@ public class GameEventsManager : MonoBehaviour
 
 		foreach(var gameEvent in GameEvents)
 		{
-			_events.Add(gameEvent.Name, gameEvent);
+			Debug.Log(gameEvent.name);
+			_events.Add(gameEvent.name, gameEvent);
 		}
 	}
 
-	public static void PlayEvent(string eventName, GameObject gameObject)
+	public void PlayEvent(string eventName, GameObject gameObject)
 	{
 		_events[eventName].GameObject = gameObject;
-		_events[eventName].Execute();
+		StartCoroutine(_events[eventName].Execute(gameObject));
 	}
 }

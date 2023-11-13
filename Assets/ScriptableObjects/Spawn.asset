@@ -13,38 +13,18 @@ MonoBehaviour:
   m_Name: Spawn
   m_EditorClassIdentifier: 
   GameObject: {fileID: 0}
-  Name: 
+  Name: Spawn
   Feedbacks:
-  - rid: 3054296208083517459
-  - rid: 3054296208083517460
-  - rid: 3054296208083517461
-  - rid: 3054296208083517462
-  - rid: 3054296208083517463
-  - rid: 3054296208083517464
+  - rid: 3054296252033269765
+  - rid: 3054296252033269766
   references:
     version: 2
     RefIds:
-    - rid: 3054296208083517459
-      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        Prefab: {fileID: 0}
-    - rid: 3054296208083517460
+    - rid: 3054296252033269765
       type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
       data:
-        _delay: 0
-    - rid: 3054296208083517461
-      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        _delay: 0
-    - rid: 3054296208083517462
+        _delay: 1
+    - rid: 3054296252033269766
       type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
       data:
-        Prefab: {fileID: 0}
-    - rid: 3054296208083517463
-      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        Prefab: {fileID: 0}
-    - rid: 3054296208083517464
-      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        Prefab: {fileID: 0}
+        Prefab: {fileID: 3269509414490483889, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}

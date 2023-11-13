@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1d988410dcfe949a60f3c4dd9ccd09, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 0}
+  Feedbacks:
+  - rid: 3054296252033269831
+  - rid: 3054296252033269773
+  - rid: 3054296252033269777
+  - rid: 3054296252033269778
+  - rid: 3054296252033269799
+  - rid: 3054296252033269779
+  - rid: 3054296252033269780
+  - rid: 3054296252033269781
+  - rid: 3054296252033269782
+  - rid: 3054296252033269783
+  - rid: 3054296252033269784
+  - rid: 3054296252033269785
+  - rid: 3054296252033269786
+  - rid: 3054296252033269787
+  - rid: 3054296252033269788
+  - rid: 3054296252033269789
+  - rid: 3054296252033269790
+  - rid: 3054296252033269791
+  - rid: 3054296252033269792
+  - rid: 3054296252033269793
+  - rid: 3054296252033269794
+  - rid: 3054296252033269795
+  - rid: 3054296252033269796
+  - rid: 3054296252033269830
+  references:
+    version: 2
+    RefIds:
+    - rid: 3054296252033269773
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 9fdcedbb9d129f149b111cfd0b871014, type: 3}
+    - rid: 3054296252033269777
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269778
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 3fbd153d239da2a4ba379a199f71c706, type: 3}
+    - rid: 3054296252033269779
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 2dbca8a7f1d9fae4989c62e00cded211, type: 3}
+    - rid: 3054296252033269780
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269781
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 416ff6f82a753ba4288852887668491f, type: 3}
+    - rid: 3054296252033269782
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269783
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: d950e76ef2d0c7f48ab3af1a38e4ef45, type: 3}
+    - rid: 3054296252033269784
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269785
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 5f74eb7a338ec274bb4acee0244fb968, type: 3}
+    - rid: 3054296252033269786
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269787
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 09dd4a9ed8a68604388904f0e69b7a30, type: 3}
+    - rid: 3054296252033269788
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269789
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 9a0969a9c21988444a3752aa745af126, type: 3}
+    - rid: 3054296252033269790
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269791
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 19c5b4ad43950b747a129f57f284b21e, type: 3}
+    - rid: 3054296252033269792
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269793
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: 971b6f81df7f50a4295afef321235536, type: 3}
+    - rid: 3054296252033269794
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269795
+      type: {class: AnimationFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _frame: {fileID: 21300000, guid: e017681c8eb852849a66954d651dd6cd, type: 3}
+    - rid: 3054296252033269796
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269799
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 0.0833
+    - rid: 3054296252033269830
+      type: {class: AnimationRestartFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _restartAnimation: 1
+    - rid: 3054296252033269831
+      type: {class: AnimationRestartFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _restartAnimation: 0

@@ -53,25 +53,44 @@ public class GameEventEditor : Editor
 		serializedObject.Update();
 
 		GameEvent gameEvent = target as GameEvent;
-		string[] types = new string[] { "Add New Feedback", "Instantiate", "Wait" };
+		string[] types = new string[] { "Add New Feedback", "FrameChange", "StartAnimation", "Instantiate", "ChangeState", "Wait" };
 
 		int newItem = EditorGUILayout.Popup(0, types) - 1;
 
+		Color color = Color.white;
+
 		if (newItem >= 0)
 		{
+			Debug.Log(_types[newItem]);
 			GameFeedback newFeedback = Activator.CreateInstance(_types[newItem]) as GameFeedback;
 
 			EditorUtility.SetDirty(gameEvent);
 			AssetDatabase.SaveAssets();
 			gameEvent.Feedbacks.Add(newFeedback);
+
 			_feedbacksFoldout.Add(false);
 		}
+
+		/*switch (_types[newItem].ToString())
+		{
+			case "AnimationFeedback":
+				color = Color.cyan;
+				break;
+			case "WaitFeedback":
+				color = Color.yellow;
+				break;
+			default:
+				color = Color.white;
+				break;
+		}*/
 
 		for (int i = 0; i < _feedbacks.arraySize; i++)
 		{
 			int controlId = GUIUtility.GetControlID(FocusType.Passive);
 			SerializedProperty property = _feedbacks.GetArrayElementAtIndex(i);
 			Rect horizontal = EditorGUILayout.BeginHorizontal();
+
+			
 
 			var backgroundRect = GUILayoutUtility.GetRect(5f, 17f);
 			var offset = 4f;
@@ -83,14 +102,14 @@ public class GameEventEditor : Editor
 			foldoutRect.height = 17;
 			var line = GUILayoutUtility.GetRect(1f, 1f);
 
-			EditorGUI.DrawRect(backgroundRect, Color.white);
+			EditorGUI.DrawRect(backgroundRect, color);
 			EditorGUI.DrawRect(line, Color.black);
 
 			_feedbacksFoldout[i] = GUI.Toggle(foldoutRect, _feedbacksFoldout[i], gameEvent.Feedbacks[i].ToString(), EditorStyles.foldout);
 
 			int indexRemove = -1;
 
-			if(GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(EditorStyles.miniButton.CalcSize(new GUIContent("-")).x)))
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(EditorStyles.miniButton.CalcSize(new GUIContent("-")).x)))
 			{
 				indexRemove = i;
 			}
@@ -99,9 +118,9 @@ public class GameEventEditor : Editor
 
 			var eventCurrent = Event.current;
 
-			if(eventCurrent.type == EventType.MouseDown)
+			if (eventCurrent.type == EventType.MouseDown)
 			{
-				if(horizontal.Contains(eventCurrent.mousePosition))
+				if (horizontal.Contains(eventCurrent.mousePosition))
 				{
 					GUIUtility.hotControl = controlId;
 					_dragStartID = i;
@@ -109,16 +128,16 @@ public class GameEventEditor : Editor
 				}
 			}
 
-			if(_dragStartID == i)
+			if (_dragStartID == i)
 			{
-				Color color = new Color(0, 1, 0, 0.3f);
+				color = new Color(0, 1, 0, 0.3f);
 				EditorGUI.DrawRect(horizontal, color);
 			}
 
 
 			if (_feedbacksFoldout[i])
 			{
-				foreach(var item in GetChildren(property))
+				foreach (var item in GetChildren(property))
 				{
 					EditorGUILayout.PropertyField(item);
 				}
@@ -126,7 +145,7 @@ public class GameEventEditor : Editor
 
 			if (horizontal.Contains(eventCurrent.mousePosition))
 			{
-				if(_dragStartID >= 0)
+				if (_dragStartID >= 0)
 				{
 					_dragEndID = i;
 
@@ -139,9 +158,9 @@ public class GameEventEditor : Editor
 				}
 			}
 
-			if(_dragStartID >= 0 && _dragEndID >= 0)
+			if (_dragStartID >= 0 && _dragEndID >= 0)
 			{
-				if(_dragEndID != _dragStartID)
+				if (_dragEndID != _dragStartID)
 				{
 					if (_dragEndID > _dragStartID)
 						_dragEndID--;
@@ -151,7 +170,7 @@ public class GameEventEditor : Editor
 				}
 			}
 
-			if(_dragStartID >= 0 || _dragEndID >= 0)
+			if (_dragStartID >= 0 || _dragEndID >= 0)
 			{
 				if (eventCurrent.type == EventType.MouseUp)
 				{
@@ -161,7 +180,7 @@ public class GameEventEditor : Editor
 				}
 			}
 
-			if(indexRemove != -1)
+			if (indexRemove != -1)
 			{
 				_feedbacks.DeleteArrayElementAtIndex(indexRemove);
 				_feedbacksFoldout.RemoveAt(indexRemove);

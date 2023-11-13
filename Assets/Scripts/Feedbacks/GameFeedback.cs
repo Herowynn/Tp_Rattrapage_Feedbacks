@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class GameFeedback
 {
-    public virtual IEnumerator Execute(GameEvent gameEvent)
+    public virtual IEnumerator Execute(GameEvent gameEvent, GameObject gameObject)
     {
         yield break;
     }
