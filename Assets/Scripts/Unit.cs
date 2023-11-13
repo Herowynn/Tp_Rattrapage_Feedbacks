@@ -31,7 +31,7 @@ public class Unit : MonoBehaviour
 		set { _isSelected = value; }
 	}
 
-	private void Awake()
+	private void Start()
 	{
 		_currentState = UnitStates.Idle;
 		_startAnimation = false;
@@ -43,7 +43,6 @@ public class Unit : MonoBehaviour
 	{
 		if(_startAnimation && _currentState == UnitStates.Idle)
 		{
-			Debug.Log("je lance l'anim");
 			GameEventsManager.Instance.PlayEvent("Idle", gameObject);
 		}
 

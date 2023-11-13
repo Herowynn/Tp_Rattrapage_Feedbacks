@@ -8,7 +8,10 @@ public class AnimationFeedback : GameFeedback
 
     public override IEnumerator Execute(GameEvent gameEvent, GameObject gameObject)
     {
-		gameObject.GetComponentInChildren<SpriteRenderer>().sprite = _frame;
+        /*Debug.Log(gameEvent.name + " " + gameObject.GetComponent<Unit>().CurrentState.ToString());
+
+        if(gameEvent.name == gameObject.GetComponent<Unit>().CurrentState.ToString())*/
+		    gameObject.GetComponentInChildren<SpriteRenderer>().sprite = _frame;
 
 		yield break;
     }

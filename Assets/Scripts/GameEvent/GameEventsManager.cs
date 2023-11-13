@@ -22,7 +22,6 @@ public class GameEventsManager : MonoBehaviour
 
 		foreach(var gameEvent in GameEvents)
 		{
-			Debug.Log(gameEvent.name);
 			_events.Add(gameEvent.name, gameEvent);
 		}
 	}
