@@ -54,7 +54,7 @@ public class GameEventEditor : Editor
 
 		GameEvent gameEvent = target as GameEvent;
 		string[] types = new string[] { "Add New Feedback", "Frame Change", "Start Animation", "Black Bars Visibility", 
-			"Camera Zoom", "Instantiate", "Change State", "Wait" };
+			"Camera Zoom", "Instantiate", "Change State", "Shoot Particles", "Wait" };
 
 		int newItem = EditorGUILayout.Popup(0, types) - 1;
 

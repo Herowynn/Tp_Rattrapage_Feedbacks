@@ -13,7 +13,7 @@ public class CameraZoomFeedback : GameFeedback
 		_camera = Camera.main;
 		if(!_getBackToNormal)
 		{
-			_camera.transform.LookAt(GameManager.HitUnitPosition);
+			_camera.transform.LookAt(gameObject.transform.position);
 			_camera.fieldOfView = _cameraZoom;
 		}
 		else

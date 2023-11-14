@@ -14,6 +14,9 @@ public class Unit : MonoBehaviour
 	[SerializeField] private UnitStates _currentState;
 	[SerializeField] private bool _startAnimation;
 	[SerializeField] private bool _isSelected;
+	[SerializeField] private Transform _shootPoint;
+
+	public Transform ShootPoint => _shootPoint;
 
 	public UnitStates CurrentState
 	{
@@ -50,6 +53,7 @@ public class Unit : MonoBehaviour
 		{
 			_isSelected = false;
 			GameEventsManager.Instance.PlayEvent("Attack", gameObject);
+			GameEventsManager.Instance.PlayEvent("ShootParticle", gameObject);
 		}
 		
 		if (_currentState == UnitStates.Hit && _startAnimation)

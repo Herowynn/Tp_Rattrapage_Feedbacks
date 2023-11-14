@@ -80,8 +80,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentState: 0
-  _restartAnimation: 0
+  _startAnimation: 0
   _isSelected: 0
+  _shootPoint: {fileID: 6763141707005125179}
 --- !u!135 &8459847936101726262
 SphereCollider:
   m_ObjectHideFlags: 0

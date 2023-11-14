@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	private void Start()
+	{
+		//GameEventsManager.Instance.PlayEvent("Spawn", gameObject);
+	}
+
 	private void Update()
 	{
 		if(Input.GetMouseButtonDown(0))
@@ -50,7 +55,7 @@ public class GameManager : MonoBehaviour
 				{
 					unit.IsSelected = true;
 					_hitUnit = unit;
-					GameEventsManager.Instance.PlayEvent("Camera", gameObject);
+					//GameEventsManager.Instance.PlayEvent("Camera", _hitUnit.gameObject);
 					_shootUnit.CurrentState = Unit.UnitStates.Attack;
 					_hitUnit.CurrentState = Unit.UnitStates.Hit;
 					_hitUnit.IsSelected = false;

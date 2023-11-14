@@ -249,7 +249,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameEvents:
   - {fileID: 11400000, guid: 3b92795c450675c468badd37e10af0b7, type: 2}
-  - {fileID: 11400000, guid: 7040b242c1274504bb8bd074795e686b, type: 2}
 --- !u!4 &1055849229
 Transform:
   m_ObjectHideFlags: 0
@@ -277,7 +276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32be4961458c787478a42be20087b905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabGameObject: {fileID: 3269509414490483889, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}
+  _unitLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _shootUnit: {fileID: 0}
+  _hitUnit: {fileID: 0}
+  _blackBars: {fileID: 0}
 --- !u!1 &1695079927
 GameObject:
   m_ObjectHideFlags: 0
