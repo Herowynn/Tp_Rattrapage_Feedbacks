@@ -13,7 +13,34 @@ MonoBehaviour:
   m_Name: BlackBars
   m_EditorClassIdentifier: 
   GameObject: {fileID: 0}
-  Feedbacks: []
+  Feedbacks:
+  - rid: 3054296296307556367
+  - rid: 3054296296307556368
+  - rid: 3054296296307556369
+  - rid: 3054296296307556370
+  - rid: 3054296296307556371
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3054296296307556367
+      type: {class: CameraZoomFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _cameraZoom: 40
+        _getBackToNormal: 0
+    - rid: 3054296296307556368
+      type: {class: BlackBarsFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _isVisible: 1
+    - rid: 3054296296307556369
+      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _delay: 3
+    - rid: 3054296296307556370
+      type: {class: BlackBarsFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _isVisible: 0
+    - rid: 3054296296307556371
+      type: {class: CameraZoomFeedback, ns: , asm: Assembly-CSharp}
+      data:
+        _cameraZoom: 0
+        _getBackToNormal: 1
