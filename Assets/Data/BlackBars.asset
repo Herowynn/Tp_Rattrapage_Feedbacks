@@ -13,17 +13,7 @@ MonoBehaviour:
   m_Name: BlackBars
   m_EditorClassIdentifier: 
   GameObject: {fileID: 0}
-  Feedbacks:
-  - rid: 3054296296307556357
-  - rid: 3054296296307556358
+  Feedbacks: []
   references:
     version: 2
-    RefIds:
-    - rid: 3054296296307556357
-      type: {class: BlackBarsFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        _isVisible: 1
-    - rid: 3054296296307556358
-      type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
-      data:
-        _delay: 2
+    RefIds: []

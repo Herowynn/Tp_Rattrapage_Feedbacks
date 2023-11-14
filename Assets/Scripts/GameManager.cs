@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private Unit _shootUnit;
 	[SerializeField] private Unit _hitUnit;
 	[SerializeField] private GameObject _blackBars;
+	//[SerializeField] private Camera _mainCamera;
 
 	public static GameObject BlackBars => _instance._blackBars;
+	public static GameManager Instance => _instance;
 
 	private void Awake()
 	{
@@ -19,11 +21,6 @@ public class GameManager : MonoBehaviour
 		{
 			_instance = this;
 		}
-	}
-
-	private void Start()
-	{
-		GameEventsManager.Instance.PlayEvent("BlackBars", gameObject);
 	}
 
 	private void Update()
@@ -56,5 +53,10 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	public Vector3 GetMidDistanceBetweenUnits()
+	{
+		return Vector3.Lerp(_hitUnit.transform.position, _shootUnit.transform.position, 0.5f);
 	}
 }
