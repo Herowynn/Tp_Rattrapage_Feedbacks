@@ -13,8 +13,7 @@ public class CameraZoomFeedback : GameFeedback
 		_camera = Camera.main;
 		if(!_getBackToNormal)
 		{
-			Vector3 pointToLook = GameManager.Instance.GetMidDistanceBetweenUnits();
-			_camera.transform.LookAt(pointToLook);
+			_camera.transform.LookAt(GameManager.HitUnitPosition);
 			_camera.fieldOfView = _cameraZoom;
 		}
 		else

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance => _instance;
 	public static Transform CameraOriginTransform => _instance._cameraOriginTransform;
 	public static float CameraOriginZoom => _instance._cameraOriginZoom;
+	public static Vector3 HitUnitPosition => _instance._hitUnit.gameObject.transform.position;
 
 	private void Awake()
 	{
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
 				{
 					unit.IsSelected = true;
 					_hitUnit = unit;
-					GameEventsManager.Instance.PlayEvent("BlackBars", gameObject);
+					GameEventsManager.Instance.PlayEvent("Camera", gameObject);
 					_shootUnit.CurrentState = Unit.UnitStates.Attack;
 					_hitUnit.CurrentState = Unit.UnitStates.Hit;
 					_hitUnit.IsSelected = false;
@@ -59,10 +60,5 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
-	}
-
-	public Vector3 GetMidDistanceBetweenUnits()
-	{
-		return Vector3.Lerp(_hitUnit.transform.position, _shootUnit.transform.position, 0.5f);
 	}
 }
