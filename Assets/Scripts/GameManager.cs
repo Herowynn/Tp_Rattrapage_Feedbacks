@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private LayerMask _unitLayerMask;
 	[SerializeField] private Unit _shootUnit;
 	[SerializeField] private Unit _hitUnit;
+	[SerializeField] private GameObject _blackBars;
+
+	public static GameObject BlackBars => _instance._blackBars;
 
 	private void Awake()
 	{
@@ -16,6 +19,11 @@ public class GameManager : MonoBehaviour
 		{
 			_instance = this;
 		}
+	}
+
+	private void Start()
+	{
+		GameEventsManager.Instance.PlayEvent("BlackBars", gameObject);
 	}
 
 	private void Update()

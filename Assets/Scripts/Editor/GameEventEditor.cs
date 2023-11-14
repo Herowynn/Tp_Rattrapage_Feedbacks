@@ -53,7 +53,8 @@ public class GameEventEditor : Editor
 		serializedObject.Update();
 
 		GameEvent gameEvent = target as GameEvent;
-		string[] types = new string[] { "Add New Feedback", "FrameChange", "StartAnimation", "Instantiate", "ChangeState", "Wait" };
+		string[] types = new string[] { "Add New Feedback", "Frame Change", "Start Animation", "Black Bars Visibility", 
+			"Instantiate", "Change State", "Wait" };
 
 		int newItem = EditorGUILayout.Popup(0, types) - 1;
 
