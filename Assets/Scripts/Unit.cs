@@ -15,6 +15,7 @@ public class Unit : MonoBehaviour
 	[SerializeField] private bool _startAnimation;
 	[SerializeField] private bool _isSelected;
 	[SerializeField] private Transform _shootPoint;
+	[SerializeField] private GameObject _selectSquare;
 
 	public Transform ShootPoint => _shootPoint;
 
@@ -65,5 +66,11 @@ public class Unit : MonoBehaviour
 			GameEventsManager.Instance.PlayEvent("Hit", gameObject);
 			GameEventsManager.Instance.PlayEvent("HitParticle", gameObject);
 		}
+
+		if(_isSelected)
+			_selectSquare.SetActive(true);
+
+		else if(!_isSelected)
+			_selectSquare.SetActive(false);
 	}
 }

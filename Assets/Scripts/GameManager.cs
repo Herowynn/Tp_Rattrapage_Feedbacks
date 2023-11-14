@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 	private static GameManager _instance;
 	[SerializeField] private LayerMask _unitLayerMask;
+	[SerializeField] private LayerMask _tileLayerMask;
 	[SerializeField] private Unit _shootUnit;
 	[SerializeField] private Unit _hitUnit;
 	[SerializeField] private Unit _oldHitUnit;
@@ -40,7 +41,9 @@ public class GameManager : MonoBehaviour
 		if(Input.GetMouseButtonDown(0))
 		{
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity, _unitLayerMask) && hit.collider.TryGetComponent<Unit>(out Unit unit))
+			RaycastHit hit;
+
+			if (Physics.Raycast(ray, out hit, float.PositiveInfinity, _unitLayerMask) && hit.collider.TryGetComponent<Unit>(out Unit unit))
 			{
 				if (_shootUnit == null)
 				{
@@ -49,8 +52,8 @@ public class GameManager : MonoBehaviour
 				}
 				else if (_shootUnit == unit)
 				{
+					_shootUnit.IsSelected = false;
 					_shootUnit = null;
-					_hitUnit = null;
 				}
 				else if(_hitUnit == null)
 				{
@@ -65,6 +68,14 @@ public class GameManager : MonoBehaviour
 					_shootUnit = null;
 				}
 			}
+
+			else if (Physics.Raycast(ray, out hit, float.PositiveInfinity, _tileLayerMask) && hit.collider.TryGetComponent<Tile>(out Tile tile) && _shootUnit != null)
+			{
+				_shootUnit.transform.position = tile.SpawnPoint.position;
+				_shootUnit.IsSelected = false;
+				_shootUnit = null;
+			}
+
 		}
 	}
 }

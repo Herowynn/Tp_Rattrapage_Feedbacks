@@ -1653,6 +1653,9 @@ MonoBehaviour:
   _unitLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  _tileLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
   _shootUnit: {fileID: 0}
   _hitUnit: {fileID: 0}
   _oldHitUnit: {fileID: 0}
