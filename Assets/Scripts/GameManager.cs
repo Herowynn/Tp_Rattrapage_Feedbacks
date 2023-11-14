@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private LayerMask _unitLayerMask;
 	[SerializeField] private Unit _shootUnit;
 	[SerializeField] private Unit _hitUnit;
+	[SerializeField] private Unit _oldHitUnit;
 	[SerializeField] private GameObject _blackBars;
 	private Transform _cameraOriginTransform;
 	private float _cameraOriginZoom;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance => _instance;
 	public static Transform CameraOriginTransform => _instance._cameraOriginTransform;
 	public static float CameraOriginZoom => _instance._cameraOriginZoom;
-	public static Vector3 HitUnitPosition => _instance._hitUnit.gameObject.transform.position;
+	public static Transform HitUnitTransform => _instance._oldHitUnit.gameObject.transform;
 
 	private void Awake()
 	{
@@ -55,9 +56,9 @@ public class GameManager : MonoBehaviour
 				{
 					unit.IsSelected = true;
 					_hitUnit = unit;
-					//GameEventsManager.Instance.PlayEvent("Camera", _hitUnit.gameObject);
+					_oldHitUnit = unit;
+					GameEventsManager.Instance.PlayEvent("Camera", _hitUnit.gameObject);
 					_shootUnit.CurrentState = Unit.UnitStates.Attack;
-					_hitUnit.CurrentState = Unit.UnitStates.Hit;
 					_hitUnit.IsSelected = false;
 					_shootUnit.IsSelected = false;
 					_hitUnit = null;

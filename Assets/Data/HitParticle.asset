@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb1d988410dcfe949a60f3c4dd9ccd09, type: 3}
-  m_Name: Spawn
+  m_Name: HitParticle
   m_EditorClassIdentifier: 
   GameObject: {fileID: 0}
   Feedbacks:
-  - rid: 3054296252033269766
+  - rid: 3054296300512083980
   references:
     version: 2
     RefIds:
-    - rid: 3054296252033269766
-      type: {class: InstantiateFeedback, ns: , asm: Assembly-CSharp}
+    - rid: 3054296300512083980
+      type: {class: ShootParticleFeedback, ns: , asm: Assembly-CSharp}
       data:
-        Prefab: {fileID: 3385519431603131783, guid: 54280d54f87576943b9d4368be30a721, type: 3}
+        _particleEffectPrefab: {fileID: 8553156611024614564, guid: 9479cd7e19ac39d439049532704a5e5d, type: 3}

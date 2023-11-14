@@ -46,12 +46,14 @@ public class Unit : MonoBehaviour
 	{
 		if(_startAnimation && _currentState == UnitStates.Idle)
 		{
+			_startAnimation = false;
 			GameEventsManager.Instance.PlayEvent("Idle", gameObject);
 		}
 
 		if (_currentState == UnitStates.Attack && _startAnimation)
 		{
 			_isSelected = false;
+			_startAnimation = false;
 			GameEventsManager.Instance.PlayEvent("Attack", gameObject);
 			GameEventsManager.Instance.PlayEvent("ShootParticle", gameObject);
 		}
@@ -59,7 +61,9 @@ public class Unit : MonoBehaviour
 		if (_currentState == UnitStates.Hit && _startAnimation)
 		{
 			_isSelected = false;
+			_startAnimation = false;
 			GameEventsManager.Instance.PlayEvent("Hit", gameObject);
+			GameEventsManager.Instance.PlayEvent("HitParticle", gameObject);
 		}
 	}
 }

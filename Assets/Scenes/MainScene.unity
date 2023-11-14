@@ -1389,6 +1389,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1469821354}
     m_Modifications:
+    - target: {fileID: 244041451690618354, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244041451690618354, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 244041451690618354, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3269509414490483889, guid: 4e73a7c059b866740911e06a5b50f89c, type: 3}
       propertyPath: m_Name
       value: Soldier
@@ -1610,6 +1622,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a51c7fcb51ff1b4db6b8ce30bf2ec1a, type: 2}
   - {fileID: 11400000, guid: b330fcfd0f2c74f4d96ef478627043e7, type: 2}
   - {fileID: 11400000, guid: 9049b6e4f10dd6d4482b37b22692c0e1, type: 2}
+  - {fileID: 11400000, guid: e76850f6d92e6394d9e0797fa77a6d61, type: 2}
 --- !u!4 &1382342067
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,6 +1655,7 @@ MonoBehaviour:
     m_Bits: 8
   _shootUnit: {fileID: 0}
   _hitUnit: {fileID: 0}
+  _oldHitUnit: {fileID: 0}
   _blackBars: {fileID: 469610820}
 --- !u!1 &1469821353
 GameObject:
