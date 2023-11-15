@@ -34,7 +34,7 @@ MonoBehaviour:
     - rid: 3054296296307556369
       type: {class: WaitFeedback, ns: , asm: Assembly-CSharp}
       data:
-        _delay: 3
+        _delay: 4
     - rid: 3054296296307556370
       type: {class: BlackBarsFeedback, ns: , asm: Assembly-CSharp}
       data:

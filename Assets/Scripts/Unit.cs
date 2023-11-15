@@ -65,6 +65,7 @@ public class Unit : MonoBehaviour
 			_startAnimation = false;
 			GameEventsManager.Instance.PlayEvent("Hit", gameObject);
 			GameEventsManager.Instance.PlayEvent("HitParticle", gameObject);
+			GameEventsManager.Instance.PlayEvent("CameraShake", Camera.main.gameObject);
 		}
 
 		if(_isSelected)
